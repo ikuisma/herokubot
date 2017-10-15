@@ -1,6 +1,6 @@
 import os
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-
+import logging
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
@@ -38,5 +38,5 @@ dispatcher.add_handler(unknown_handler)
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
-updater.bot.set_webhook("https://<appname>.herokuapp.com/" + TOKEN)
+updater.bot.set_webhook("https://evening-journey-37062.herokuapp.com/" + TOKEN)
 updater.idle()
